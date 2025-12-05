@@ -46,7 +46,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 1,
     students: 6500,
     tuitionAvg: 'от 5 000 000 ₸',
-    image: 'https://vlast.kz/avtory/59305-mify-o-nazarbaev-universitete-ili-kuda-utekaut-budzetnye-dengi.html',
+    image: 'https://vlast.kz/media/pages/8z/17103992352mfah_1600x900.jpg',
     logo: 'NU',
     tourUrl: 'https://nu.edu.kz/ru/campus/campustour',
     mission: 'Стать моделью реформы высшего образования и научным центром Казахстана.',
