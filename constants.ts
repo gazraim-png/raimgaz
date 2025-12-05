@@ -100,7 +100,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 3,
     students: 20000,
     tuitionAvg: '1 000 000 – 1 300 000 ₸',
-    image: 'https://orda.kz/enu-pod-podozreniem-skandal-s-mertvymi-dushami-i-vozmozhnye-finansovye-mahinacii-389145/',
+    image: 'https://orda.kz/uploads/posts/2024-07/sizes/1440x810/photo_2024-07-16_16-56-32.webp',
     logo: 'ENU',
     mission: 'Генерация знаний и подготовка конкурентоспособных кадров для устойчивого развития Евразии.',
     programs: [
@@ -138,7 +138,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 12,
     students: 12000,
     tuitionAvg: '800 000 – 950 000 ₸',
-    image: 'https://kazatu.edu.kz/ru/news/tugan-knimen-sejfullin-universiteti',
+    image: 'https://kazatu.edu.kz/img/news/e18014de903fc80cc118fda6c813c762.jpg',
     logo: 'KATU',
     mission: 'Интеграция образования, науки и производства для развития АПК страны.',
     programs: [
@@ -172,7 +172,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 10,
     students: 4000,
     tuitionAvg: '1 600 000 ₸',
-    image: 'https://admission.astanait.edu.kz/test',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZU6bb1Fufl3_WbA_UTQD6zmX6YiKwCIl8BA&s',
     logo: 'AITU',
     mission: 'Подготовка цифровой элиты для трансформации экономики Казахстана.',
     programs: [
@@ -211,7 +211,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 19,
     students: 8000,
     tuitionAvg: '1 100 000 – 1 400 000 ₸',
-    image: 'https://amu.edu.kz/ru/about-university/',
+    image: 'https://amu.edu.kz/public/img/about.png',
     logo: 'MUA',
     mission: 'Подготовка врачей новой формации, ориентированных на пациента и науку.',
     programs: [
@@ -245,7 +245,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 8,
     students: 5000,
     tuitionAvg: '1 300 000 – 2 000 000 ₸',
-    image: 'https://adaldyq.kz/universitety/universitet-kazgyuu-imeni-m.s.-narikbaeva',
+    image: 'https://adaldyq.kz/assets/stub/images/bcad117c-2620-4d26-bc46-b925ed78610d.jpg',
     logo: 'KAZGUU',
     mission: 'Служение правосудию и обществу через качественное образование.',
     programs: [
@@ -285,7 +285,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 2,
     students: 25000,
     tuitionAvg: '1 200 000 – 1 600 000 ₸',
-    image: 'https://farabi.university/news/90408?lang=ru',
+    image: 'https://farabi.university/storage/news/242924538367094afa63354965757615_9b9f66e5-5e65-478a-b211-d7d02769d15b.jpeg',
     logo: 'KazNU',
     mission: 'Формирование интеллектуального потенциала нации и интеграция в мировое образовательное пространство.',
     programs: [
@@ -319,7 +319,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 4,
     students: 15000,
     tuitionAvg: '1 000 000 – 1 200 000 ₸',
-    image: 'https://satbayev.university/ru/news/proshlo-zasedanie-uchenogo-soveta',
+    image: 'https://satbayev.university/file/2021/10/07/1f2925/_793-446.jpg',
     logo: 'SU',
     mission: 'Научное и инженерное обеспечение промышленного развития Казахстана.',
     programs: [
@@ -357,7 +357,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 6,
     students: 4000,
     tuitionAvg: '2 400 000 – 3 600 000 ₸',
-    image: 'https://kbtu.edu.kz/ru/ob-universitete/o-nas',
+    image: 'https://kbtu.edu.kz/images/kbtu_front_build.jpg',
     logo: 'KBTU',
     mission: 'Подготовка лидеров в сфере технологий и бизнеса.',
     programs: [
@@ -395,7 +395,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 7,
     students: 3500,
     tuitionAvg: '3 500 000 – 4 200 000 ₸',
-    image: 'https://www.kimep.kz/prospective-students/ru/financial-aid/',
+    image: 'https://www.kimep.kz/prospective-students/wp-content/blogs.dir/184/files/2018/04/default-1.jpg',
     logo: 'KIMEP',
     mission: 'Воспитание образованных граждан и улучшение качества жизни в Казахстане.',
     programs: [
@@ -433,7 +433,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 9,
     students: 5000,
     tuitionAvg: '1 800 000 ₸',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://smapse.ru/storage/2019/09/x1-1.jpg',
     logo: 'IITU',
     mission: 'Подготовка квалифицированных IT-специалистов международного уровня.',
     programs: [
@@ -467,7 +467,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 13,
     students: 7000,
     tuitionAvg: '1 300 000 – 1 800 000 ₸',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://bulatutemuratov.kz/wp-content/uploads/2023/12/SEM_1741-scaled.jpg',
     logo: 'Narxoz',
     mission: 'Вдохновлять на обучение и исследования для устойчивого будущего.',
     programs: [
@@ -505,7 +505,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 14,
     students: 4500,
     tuitionAvg: '1 900 000 – 2 200 000 ₸',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://the-tech.kz/wp-content/uploads/2023/10/photo_5316799823594247227_w.jpg',
     logo: 'AlmaU',
     mission: 'Делаем мир лучше через развитие предпринимательства и знаний.',
     programs: [
@@ -543,7 +543,7 @@ export const UNIVERSITIES: University[] = [
     ranking: 15,
     students: 6000,
     tuitionAvg: '900 000 – 1 100 000 ₸',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://the-tech.kz/wp-content/uploads/2023/11/300596363_5315227575265351_7576363914820505855_n.jpeg',
     logo: 'Turan',
     mission: 'Создавать возможности для успеха каждого.',
     programs: [
