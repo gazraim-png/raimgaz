@@ -120,7 +120,7 @@ export const AIChat = forwardRef<AIChatRef>((props, ref) => {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Спроси о грантах или вузах..." 
-              className="flex-1 text-sm px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 bg-gray-50 focus:bg-white transition-all"
+              className="flex-1 text-base px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 bg-gray-50 focus:bg-white transition-all"
             />
             <button 
               onClick={() => handleSend()}

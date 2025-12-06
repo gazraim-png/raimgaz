@@ -120,8 +120,7 @@ export const UniversityDetail: React.FC<UniversityDetailProps> = ({ university, 
           onClick={() => setActiveTab('media')}
           className={`flex-1 py-4 px-4 text-center font-medium transition-colors border-b-2 flex justify-center items-center gap-2 whitespace-nowrap ${activeTab === 'media' ? 'text-brand-600 border-brand-600' : 'text-gray-500 border-transparent hover:text-gray-800'}`}
         >
-          {university.tourUrl ? <Box className="w-4 h-4" /> : <ImageIcon className="w-4 h-4" />} 
-          {university.tourUrl ? t.tour_tab : 'Галерея'}
+          <ImageIcon className="w-4 h-4" /> {t.gallery_tab}
         </button>
       </div>
 
@@ -387,57 +386,67 @@ export const UniversityDetail: React.FC<UniversityDetailProps> = ({ university, 
            <ReviewsSection university={university} lang={lang} />
         )}
 
-        {/* TAB: MEDIA/TOUR */}
+        {/* TAB: MEDIA/GALLERY */}
         {activeTab === 'media' && (
-          <div className="p-6 md:p-8 h-full flex flex-col min-h-[600px] animate-fade-in">
-            {university.tourUrl ? (
-               <div className="relative w-full h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-inner bg-gray-100">
-                 <iframe 
-                   src={university.tourUrl} 
-                   className="absolute inset-0 w-full h-full border-0"
-                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                   allowFullScreen
-                   loading="lazy"
-                   title={`3D Tour of ${university.name}`}
-                 />
-                 <div className="absolute top-2 right-2 z-10">
-                    <a 
-                      href={university.tourUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="bg-white/80 backdrop-blur hover:bg-white text-gray-700 p-2 rounded-lg shadow-sm flex items-center gap-2 text-xs font-medium transition-all"
-                      title="Открыть в новой вкладке"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      <span className="hidden sm:inline">На весь экран</span>
-                    </a>
-                 </div>
+          <div className="p-6 md:p-8 h-full flex flex-col min-h-[600px] animate-fade-in space-y-8">
+            
+            {/* 3D Tour Section */}
+            {university.tourUrl && (
+               <div className="w-full">
+                   <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                      <Box className="w-5 h-5 text-brand-600" /> {t.tour_tab}
+                   </h3>
+                   <div className="relative w-full h-[300px] md:h-[500px] rounded-xl overflow-hidden border border-gray-200 shadow-inner bg-gray-100">
+                     <iframe 
+                       src={university.tourUrl} 
+                       className="absolute inset-0 w-full h-full border-0"
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                       allowFullScreen
+                       loading="lazy"
+                       title={`3D Tour of ${university.name}`}
+                     />
+                     <div className="absolute top-2 right-2 z-10">
+                        <a 
+                          href={university.tourUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="bg-white/80 backdrop-blur hover:bg-white text-gray-700 p-2 rounded-lg shadow-sm flex items-center gap-2 text-xs font-medium transition-all"
+                          title="Открыть в новой вкладке"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          <span className="hidden sm:inline">На весь экран</span>
+                        </a>
+                     </div>
+                   </div>
                </div>
-             ) : (
-                <div className="flex flex-col h-full">
-                    <div className="mb-6">
-                       <h3 className="text-xl font-bold text-gray-900 mb-2">Фотогалерея кампуса</h3>
-                       <p className="text-gray-500">Виртуальный тур временно недоступен, но вы можете оценить атмосферу по фотографиям.</p>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-[200px]">
-                        {/* Main Image */}
-                        <div className="sm:col-span-2 row-span-2 rounded-xl overflow-hidden relative group cursor-pointer">
-                            <img src={university.image} alt="Main Campus" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                <span className="text-white font-medium">Главный корпус</span>
-                            </div>
-                        </div>
-                        {/* Fallback Grid */}
-                        {GALLERY_IMAGES.map((img, idx) => (
-                           <div key={idx} className="rounded-xl overflow-hidden relative group cursor-pointer">
-                                <img src={img} alt={`Gallery ${idx}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                           </div>
-                        ))}
-                    </div>
+            )}
+
+            {/* Gallery Grid */}
+            <div className="flex flex-col h-full">
+                <div className="mb-6">
+                   <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+                      <ImageIcon className="w-5 h-5 text-brand-600" /> {t.gallery_tab}
+                   </h3>
+                   <p className="text-gray-500">Фотографии кампуса и студенческой жизни.</p>
                 </div>
-             )}
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-[200px]">
+                    {/* Main Image */}
+                    <div className="sm:col-span-2 row-span-2 rounded-xl overflow-hidden relative group cursor-pointer">
+                        <img src={university.image} alt="Main Campus" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <span className="text-white font-medium">Главный корпус</span>
+                        </div>
+                    </div>
+                    {/* Fallback Grid */}
+                    {GALLERY_IMAGES.map((img, idx) => (
+                       <div key={idx} className="rounded-xl overflow-hidden relative group cursor-pointer">
+                            <img src={img} alt={`Gallery ${idx}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                       </div>
+                    ))}
+                </div>
+            </div>
           </div>
         )}
       </div>

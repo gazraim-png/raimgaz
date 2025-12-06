@@ -31,6 +31,7 @@ export const TRANSLATIONS = {
     back_to_list: 'Назад к списку',
     info_tab: 'Информация',
     tour_tab: '3D Кампус',
+    gallery_tab: 'Галерея',
     reviews_tab: 'Отзывы студентов',
     compare_min: 'Выберите минимум 2 вуза',
     add_to_compare: 'Добавить к сравнению',
@@ -114,7 +115,12 @@ export const TRANSLATIONS = {
     ad_placeholder: 'Здесь может быть ваша реклама',
     ad_desc: 'Эффективное продвижение для образовательных центров',
     ad_btn: 'Разместить',
-    sidebar_contact: 'Связаться:'
+    sidebar_contact: 'Связаться:',
+    
+    // Support
+    contact_support: 'Техническая поддержка',
+    write_whatsapp: 'Написать в WhatsApp',
+    write_telegram: 'Написать в Telegram',
   },
   kz: {
     title: 'ҚР ЖОО-лары',
@@ -147,6 +153,7 @@ export const TRANSLATIONS = {
     back_to_list: 'Тізімге оралу',
     info_tab: 'Ақпарат',
     tour_tab: '3D Кампус',
+    gallery_tab: 'Галерея',
     reviews_tab: 'Студенттер пікірі',
     compare_min: 'Салыстыру үшін кемінде 2 ЖОО таңдаңыз',
     add_to_compare: 'Салыстыруға қосу',
@@ -230,7 +237,12 @@ export const TRANSLATIONS = {
     ad_placeholder: 'Бұл жерде сіздің жарнамаңыз болуы мүмкін',
     ad_desc: 'Оқу орталықтарын тиімді жылжыту',
     ad_btn: 'Орналастыру',
-    sidebar_contact: 'Байланыс:'
+    sidebar_contact: 'Байланыс:',
+
+    // Support
+    contact_support: 'Техникалық қолдау',
+    write_whatsapp: 'WhatsApp-қа жазу',
+    write_telegram: 'Telegram-ға жазу',
   },
   en: {
     title: 'KZ Universities',
@@ -263,6 +275,7 @@ export const TRANSLATIONS = {
     back_to_list: 'Back to list',
     info_tab: 'Information',
     tour_tab: '3D Campus',
+    gallery_tab: 'Gallery',
     reviews_tab: 'Reviews',
     compare_min: 'Select at least 2 universities to compare',
     add_to_compare: 'Add to compare',
@@ -346,6 +359,11 @@ export const TRANSLATIONS = {
     ad_placeholder: 'Your ad could be here',
     ad_desc: 'Effective promotion for educational centers',
     ad_btn: 'Place Ad',
-    sidebar_contact: 'Contact:'
+    sidebar_contact: 'Contact:',
+
+    // Support
+    contact_support: 'Technical Support',
+    write_whatsapp: 'Write on WhatsApp',
+    write_telegram: 'Write on Telegram',
   }
 };

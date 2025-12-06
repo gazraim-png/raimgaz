@@ -48,7 +48,6 @@ export const UNIVERSITIES: University[] = [
     tuitionAvg: 'от 5 000 000 ₸',
     image: 'https://vlast.kz/media/pages/8z/17103992352mfah_1600x900.jpg',
     logo: 'NU',
-    tourUrl: 'https://nu.edu.kz/ru/campus/campustour',
     mission: 'Стать моделью реформы высшего образования и научным центром Казахстана.',
     programs: [
       { name: 'Computer Science', degree: 'Bachelor', duration: '4 года', language: 'English', description: 'Изучение алгоритмов, ИИ и разработки ПО.' },
@@ -1029,7 +1028,7 @@ export const FEATURES_DATA = [
   { id: 1, title: 'Об университете', desc: 'Миссия, история, лидерство', icon: 'BookOpen' },
   { id: 2, title: 'Академ. программы', desc: 'Перечень специальностей и курсов', icon: 'GraduationCap' },
   { id: 3, title: 'Приём и поступление', desc: 'Требования, сроки, гранты', icon: 'FileCheck' },
-  { id: 4, title: '3D-тур', desc: 'Виртуальное путешествие по кампусу', icon: 'Box' },
+  { id: 4, title: 'Фотогалерея', desc: 'Жизнь кампуса в фотографиях', icon: 'ImageIcon' },
   { id: 5, title: 'Международное сотрудничество', desc: 'Обмен, партнеры, стажировки', icon: 'Globe2' },
   { id: 6, title: 'Функция сравнения', desc: 'Анализ и сравнение вузов', icon: 'GitCompare' },
 ];

@@ -182,7 +182,7 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ university, lang
                  </div>
                  {renderStars(review.rating)}
               </div>
-              <p className="text-gray-700 text-sm leading-relaxed ml-13 pl-13 md:pl-0 mt-2">
+              <p className="text-gray-700 text-sm leading-relaxed ml-12 pl-1 md:pl-0 mt-2">
                  {review.text}
               </p>
             </div>

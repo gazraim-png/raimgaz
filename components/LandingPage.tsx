@@ -80,7 +80,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
                   type="text" 
                   required
                   placeholder="Введите ваше имя"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all text-base"
                   value={formData.name}
                   onChange={e => setFormData({...formData, name: e.target.value})}
                 />
@@ -91,7 +91,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
                 <input 
                   type="email" 
                   placeholder="name@example.com"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all text-base"
                   value={formData.email}
                   onChange={e => setFormData({...formData, email: e.target.value})}
                 />
