@@ -8,6 +8,15 @@ export interface AcademicProgram {
   tuition?: string; // Specific tuition for program if needed
 }
 
+export interface Review {
+  id: string;
+  author: string;
+  role: 'Student' | 'Alumni' | 'Parent';
+  rating: number; // 1-5
+  date: string;
+  text: string;
+}
+
 export interface University {
   id: string;
   name: string;
@@ -49,6 +58,9 @@ export interface University {
     email?: string;
     address?: string;
   };
+
+  // Reviews
+  reviews?: Review[];
 }
 
 export interface Profession {

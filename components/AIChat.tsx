@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect, useImperativeHandle, forwardRef } from 'react';
 import { MessageCircle, X, Send, Sparkles, Loader2, GraduationCap } from 'lucide-react';
 import { sendMessageToGemini } from '../services/geminiService';
@@ -37,7 +38,10 @@ export const AIChat = forwardRef<AIChatRef>((props, ref) => {
   };
 
   useEffect(() => {
-    scrollToBottom();
+    // FIX: Only scroll if chat is actually open to prevent page jump on load
+    if (isOpen) {
+        scrollToBottom();
+    }
   }, [messages, isOpen]);
 
   const handleSend = async (textOverride?: string) => {

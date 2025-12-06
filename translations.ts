@@ -1,5 +1,4 @@
 
-
 export const TRANSLATIONS = {
   ru: {
     title: 'ВУЗ-ов РК',
@@ -32,13 +31,14 @@ export const TRANSLATIONS = {
     back_to_list: 'Назад к списку',
     info_tab: 'Информация',
     tour_tab: '3D Кампус',
+    reviews_tab: 'Отзывы студентов',
     compare_min: 'Выберите минимум 2 вуза',
     add_to_compare: 'Добавить к сравнению',
     remove_compare: 'Убрать из сравнения',
     cat_National: 'Национальный',
     cat_State: 'Государственный',
     cat_Private: 'Частный',
-    cat_Medical: 'Медициналық',
+    cat_Medical: 'Медицинский',
     cat_Specialized: 'Профильный',
     ai_compare_btn: 'Сравнить с помощью AI',
     ai_compare_title: 'AI Анализ и Сравнение',
@@ -55,6 +55,28 @@ export const TRANSLATIONS = {
     quiz_finish: 'Подобрать вузы',
     guidance_title: 'Персональная подборка',
     
+    // Cities
+    city_Astana: 'Астана',
+    city_Almaty: 'Алматы',
+    city_Shymkent: 'Шымкент',
+    city_Karaganda: 'Караганда',
+    city_Aktau: 'Актау',
+    city_Atyrau: 'Атырау',
+    city_Kaskelen: 'Каскелен',
+
+    // Reviews
+    reviews_title: 'Мнения студентов',
+    reviews_empty: 'Отзывов пока нет. Будьте первым!',
+    write_review_btn: 'Написать отзыв',
+    your_name: 'Ваше имя',
+    your_role: 'Статус',
+    role_student: 'Студент',
+    role_alumni: 'Выпускник',
+    your_review: 'Ваш отзыв',
+    rating_label: 'Оценка',
+    submit_btn: 'Отправить',
+    cancel_btn: 'Отмена',
+
     // Professions
     prof_salary_avg: 'Средняя зарплата',
     prof_demand: 'Востребованность',
@@ -125,6 +147,7 @@ export const TRANSLATIONS = {
     back_to_list: 'Тізімге оралу',
     info_tab: 'Ақпарат',
     tour_tab: '3D Кампус',
+    reviews_tab: 'Студенттер пікірі',
     compare_min: 'Салыстыру үшін кемінде 2 ЖОО таңдаңыз',
     add_to_compare: 'Салыстыруға қосу',
     remove_compare: 'Салыстырудан алып тастау',
@@ -147,6 +170,28 @@ export const TRANSLATIONS = {
     quiz_next: 'Келесі',
     quiz_finish: 'ЖОО таңдау',
     guidance_title: 'Жеке ұсыныстар',
+    
+    // Cities
+    city_Astana: 'Астана',
+    city_Almaty: 'Алматы',
+    city_Shymkent: 'Шымкент',
+    city_Karaganda: 'Қарағанды',
+    city_Aktau: 'Ақтау',
+    city_Atyrau: 'Атырау',
+    city_Kaskelen: 'Қаскелең',
+
+    // Reviews
+    reviews_title: 'Студенттер пікірі',
+    reviews_empty: 'Пікірлер әзірге жоқ. Алғашқы болыңыз!',
+    write_review_btn: 'Пікір жазу',
+    your_name: 'Сіздің атыңыз',
+    your_role: 'Статус',
+    role_student: 'Студент',
+    role_alumni: 'Түлек',
+    your_review: 'Сіздің пікіріңіз',
+    rating_label: 'Баға',
+    submit_btn: 'Жіберу',
+    cancel_btn: 'Болдырмау',
 
     // Professions
     prof_salary_avg: 'Орташа жалақы',
@@ -218,6 +263,7 @@ export const TRANSLATIONS = {
     back_to_list: 'Back to list',
     info_tab: 'Information',
     tour_tab: '3D Campus',
+    reviews_tab: 'Reviews',
     compare_min: 'Select at least 2 universities to compare',
     add_to_compare: 'Add to compare',
     remove_compare: 'Remove from compare',
@@ -240,6 +286,28 @@ export const TRANSLATIONS = {
     quiz_next: 'Next',
     quiz_finish: 'Find Universities',
     guidance_title: 'Your Recommendations',
+    
+    // Cities
+    city_Astana: 'Astana',
+    city_Almaty: 'Almaty',
+    city_Shymkent: 'Shymkent',
+    city_Karaganda: 'Karaganda',
+    city_Aktau: 'Aktau',
+    city_Atyrau: 'Atyrau',
+    city_Kaskelen: 'Kaskelen',
+
+    // Reviews
+    reviews_title: 'Student Reviews',
+    reviews_empty: 'No reviews yet. Be the first!',
+    write_review_btn: 'Write a Review',
+    your_name: 'Your Name',
+    your_role: 'Status',
+    role_student: 'Student',
+    role_alumni: 'Alumni',
+    your_review: 'Your Review',
+    rating_label: 'Rating',
+    submit_btn: 'Submit',
+    cancel_btn: 'Cancel',
 
     // Professions
     prof_salary_avg: 'Average Salary',

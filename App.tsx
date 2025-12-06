@@ -51,6 +51,25 @@ export default function App() {
   const itemsPerPage = 7;
   const t = TRANSLATIONS[lang];
 
+  // Helper mapping for Russian data in constants.ts to translation keys
+  const cityMapping: Record<string, string> = {
+    'Астана': 'Astana',
+    'Алматы': 'Almaty',
+    'Шымкент': 'Shymkent',
+    'Караганда': 'Karaganda',
+    'Актау': 'Aktau',
+    'Атырау': 'Atyrau',
+    'Каскелен': 'Kaskelen'
+  };
+
+  const getCityDisplayName = (city: string) => {
+    const key = cityMapping[city];
+    if (key && t[`city_${key}` as keyof typeof t]) {
+      return t[`city_${key}` as keyof typeof t];
+    }
+    return city;
+  };
+
   // Scroll to top whenever view changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -71,6 +90,9 @@ export default function App() {
       ...prev,
       name: displayName,
     }));
+    
+    // Explicit scroll to top on login
+    window.scrollTo(0, 0);
   };
 
   const handleLogout = () => {
@@ -83,7 +105,7 @@ export default function App() {
 
   // --- Filtering Logic ---
   const cities = useMemo(() => ['All', ...Array.from(new Set(UNIVERSITIES.map(u => u.location))).sort()], []);
-  const categories = useMemo(() => ['All', 'National', 'State', 'Private', 'Medical'], []);
+  const categories = useMemo(() => ['All', ...Array.from(new Set(UNIVERSITIES.map(u => u.category || 'State'))).sort()], []);
   const profCategories = useMemo(() => ['All', ...Array.from(new Set(PROFESSIONS.map(p => p.category))).sort()], []);
 
   const suggestions = useMemo(() => {
@@ -125,11 +147,7 @@ export default function App() {
         const matchesProgram = u.programs.some(p => p.name.toLowerCase().includes(term));
         const isSearchMatch = term === '' || matchesName || matchesProgram;
         const matchesCity = selectedCity === 'All' || u.location === selectedCity;
-        const matchesCategory = selectedCategory === 'All' || 
-                                (selectedCategory === 'Medical' && u.category === 'Medical') ||
-                                (selectedCategory === 'National' && u.category === 'National') ||
-                                (selectedCategory === 'State' && u.category === 'State') ||
-                                (selectedCategory === 'Private' && u.category === 'Private');
+        const matchesCategory = selectedCategory === 'All' || u.category === selectedCategory;
         const matchesLangFilter = selectedLangFilter === 'All' || u.programs.some(p => {
            const l = p.language.toLowerCase();
            if (selectedLangFilter === 'en') return l.includes('english') || l.includes('en');
@@ -458,7 +476,7 @@ export default function App() {
                           >
                               <option value="All">{t.filter_all_cities}</option>
                               {cities.filter(c => c !== 'All').map(c => (
-                                  <option key={c} value={c}>{c}</option>
+                                  <option key={c} value={c}>{getCityDisplayName(c)}</option>
                               ))}
                           </select>
                           
@@ -469,7 +487,7 @@ export default function App() {
                           >
                               <option value="All">{t.filter_all_categories}</option>
                               {categories.filter(c => c !== 'All').map(c => (
-                                  <option key={c} value={c}>{t[`cat_${c}` as keyof typeof t]}</option>
+                                  <option key={c} value={c}>{t[`cat_${c}` as keyof typeof t] || c}</option>
                               ))}
                           </select>
 
@@ -558,7 +576,7 @@ export default function App() {
                                   <span className="text-xs font-semibold bg-gray-100 px-2 py-1 rounded text-gray-600">{t.ranking}: #{uni.ranking}</span>
                                   {uni.category && (
                                       <span className="text-xs font-semibold bg-blue-50 text-blue-700 px-2 py-1 rounded">
-                                          {t[`cat_${uni.category}` as keyof typeof t]}
+                                          {t[`cat_${uni.category}` as keyof typeof t] || uni.category}
                                       </span>
                                   )}
                                 </div>
@@ -696,6 +714,7 @@ export default function App() {
                    const id = selectedUni.id;
                    setSavedList(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
                 }}
+                lang={lang}
               />
             )}
             

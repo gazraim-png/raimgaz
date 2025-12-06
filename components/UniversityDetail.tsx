@@ -1,33 +1,35 @@
 
 import React, { useState } from 'react';
 import { University } from '../types';
-import { MapPin, Calendar, Users, Award, BookOpen, ArrowLeft, Box, ExternalLink, Trophy, FileText, CheckCircle, ListOrdered, Coins, ChevronDown, ChevronUp, Gift, Phone, Globe, Mail, Heart, Share2, ImageIcon, ScrollText } from 'lucide-react';
+import { MapPin, Calendar, Users, Award, BookOpen, ArrowLeft, Box, ExternalLink, Trophy, FileText, CheckCircle, ListOrdered, Coins, ChevronDown, ChevronUp, Gift, Phone, Globe, Mail, Heart, Share2, ImageIcon, ScrollText, MessageSquare } from 'lucide-react';
+import { ReviewsSection } from './ReviewsSection';
+import { TRANSLATIONS } from '../translations';
 
 interface UniversityDetailProps {
   university: University;
   onBack: () => void;
   isSaved?: boolean;
   onToggleSave?: () => void;
+  lang?: 'ru' | 'kz' | 'en';
 }
 
-export const UniversityDetail: React.FC<UniversityDetailProps> = ({ university, onBack, isSaved = false, onToggleSave }) => {
-  const [activeTab, setActiveTab] = useState<'info' | 'media'>('info');
+export const UniversityDetail: React.FC<UniversityDetailProps> = ({ university, onBack, isSaved = false, onToggleSave, lang = 'ru' }) => {
+  const [activeTab, setActiveTab] = useState<'info' | 'reviews' | 'media'>('info');
   const [expandedProgram, setExpandedProgram] = useState<number | null>(null);
   const [showShareToast, setShowShareToast] = useState(false);
+  const t = TRANSLATIONS[lang];
 
   const toggleProgram = (idx: number) => {
     setExpandedProgram(expandedProgram === idx ? null : idx);
   };
 
   const handleShare = () => {
-    // Simulate sharing by copying to clipboard
     const text = `Посмотри этот университет: ${university.name} - ${university.location}`;
     navigator.clipboard.writeText(text);
     setShowShareToast(true);
     setTimeout(() => setShowShareToast(false), 2000);
   };
 
-  // Generic images for gallery fallback
   const GALLERY_IMAGES = [
     "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
     "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800",
@@ -92,10 +94,7 @@ export const UniversityDetail: React.FC<UniversityDetailProps> = ({ university, 
             </span>
             {university.category && (
                <span className="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-medium border border-white/10">
-                 {university.category === 'National' ? 'Национальный' : 
-                  university.category === 'State' ? 'Государственный' : 
-                  university.category === 'Private' ? 'Частный' : 
-                  university.category === 'Medical' ? 'Медицинский' : 'ВУЗ'}
+                 {t[`cat_${university.category}` as keyof typeof t]}
                </span>
             )}
           </div>
@@ -104,26 +103,34 @@ export const UniversityDetail: React.FC<UniversityDetailProps> = ({ university, 
       </div>
 
       {/* Tabs */}
-      <div className="flex border-b border-gray-200">
+      <div className="flex border-b border-gray-200 overflow-x-auto">
         <button 
           onClick={() => setActiveTab('info')}
-          className={`flex-1 py-4 text-center font-medium transition-colors border-b-2 ${activeTab === 'info' ? 'text-brand-600 border-brand-600' : 'text-gray-500 border-transparent hover:text-gray-800'}`}
+          className={`flex-1 py-4 px-4 text-center font-medium transition-colors border-b-2 whitespace-nowrap ${activeTab === 'info' ? 'text-brand-600 border-brand-600' : 'text-gray-500 border-transparent hover:text-gray-800'}`}
         >
-          Обзор
+          {t.info_tab}
+        </button>
+        <button 
+          onClick={() => setActiveTab('reviews')}
+          className={`flex-1 py-4 px-4 text-center font-medium transition-colors border-b-2 flex justify-center items-center gap-2 whitespace-nowrap ${activeTab === 'reviews' ? 'text-brand-600 border-brand-600' : 'text-gray-500 border-transparent hover:text-gray-800'}`}
+        >
+          <MessageSquare className="w-4 h-4" /> {t.reviews_tab}
         </button>
         <button 
           onClick={() => setActiveTab('media')}
-          className={`flex-1 py-4 text-center font-medium transition-colors border-b-2 flex justify-center items-center gap-2 ${activeTab === 'media' ? 'text-brand-600 border-brand-600' : 'text-gray-500 border-transparent hover:text-gray-800'}`}
+          className={`flex-1 py-4 px-4 text-center font-medium transition-colors border-b-2 flex justify-center items-center gap-2 whitespace-nowrap ${activeTab === 'media' ? 'text-brand-600 border-brand-600' : 'text-gray-500 border-transparent hover:text-gray-800'}`}
         >
           {university.tourUrl ? <Box className="w-4 h-4" /> : <ImageIcon className="w-4 h-4" />} 
-          {university.tourUrl ? '3D Тур' : 'Галерея'}
+          {university.tourUrl ? t.tour_tab : 'Галерея'}
         </button>
       </div>
 
       {/* Content */}
-      <div className="p-6 md:p-8 min-h-[400px]">
-        {activeTab === 'info' ? (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="p-0 md:p-0 min-h-[400px]">
+        
+        {/* TAB: INFO */}
+        {activeTab === 'info' && (
+          <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fade-in">
             <div className="lg:col-span-2 space-y-10">
               
               {/* Description & Mission */}
@@ -288,21 +295,21 @@ export const UniversityDetail: React.FC<UniversityDetailProps> = ({ university, 
                   <li className="flex items-center gap-3">
                     <Calendar className="w-5 h-5 text-gray-400" />
                     <div>
-                      <div className="text-xs text-gray-500">Основан</div>
+                      <div className="text-xs text-gray-500">{t.founded}</div>
                       <div className="font-medium text-gray-800">{university.founded}</div>
                     </div>
                   </li>
                   <li className="flex items-center gap-3">
                     <Users className="w-5 h-5 text-gray-400" />
                     <div>
-                      <div className="text-xs text-gray-500">Студентов</div>
+                      <div className="text-xs text-gray-500">{t.students}</div>
                       <div className="font-medium text-gray-800">{university.students.toLocaleString()}</div>
                     </div>
                   </li>
                   <li className="flex items-center gap-3">
                     <Award className="w-5 h-5 text-gray-400" />
                     <div>
-                      <div className="text-xs text-gray-500">Рейтинг РК</div>
+                      <div className="text-xs text-gray-500">{t.ranking}</div>
                       <div className="font-medium text-gray-800">#{university.ranking}</div>
                     </div>
                   </li>
@@ -373,8 +380,16 @@ export const UniversityDetail: React.FC<UniversityDetailProps> = ({ university, 
               </div>
             </div>
           </div>
-        ) : (
-          <div className="h-full flex flex-col min-h-[600px] animate-fade-in">
+        )}
+        
+        {/* TAB: REVIEWS */}
+        {activeTab === 'reviews' && (
+           <ReviewsSection university={university} lang={lang} />
+        )}
+
+        {/* TAB: MEDIA/TOUR */}
+        {activeTab === 'media' && (
+          <div className="p-6 md:p-8 h-full flex flex-col min-h-[600px] animate-fade-in">
             {university.tourUrl ? (
                <div className="relative w-full h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-inner bg-gray-100">
                  <iframe 
